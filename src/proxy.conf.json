@@ -1,0 +1,15 @@
+{
+    "/api": {
+      "target": "https://dati.comune.milano.it",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin":true
+    },
+  "/dataset": {
+    "target": "https://dati.comune.milano.it",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin":true
+  }
+
+  }
