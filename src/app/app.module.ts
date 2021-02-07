@@ -10,22 +10,24 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { InquinamentoComponent } from './inquinamento/inquinamento.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { HomeComponent } from './home/home.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    InquinamentoComponent,
-    HomeComponent
+    InquinamentoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    ScullyLibModule,
+    ButtonModule
   ],
   providers: [InquinamentoService],
   bootstrap: [AppComponent]

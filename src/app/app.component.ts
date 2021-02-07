@@ -1,5 +1,6 @@
 import { InquinamentoService } from './inquinamento.service';
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test';
-  result$ ;
+  result$ :any;
 
   constructor(private http: InquinamentoService) {
-    this.result$ = http.get();
+
   }
 
   columnDefs = [
@@ -25,4 +26,8 @@ rowData = [
     { make: 'Ford', model: 'Mondeo', price: 32000 },
     { make: 'Porsche', model: 'Boxter', price: 72000 }
 ];
+
+  alert(cioao: string) {
+    this.result$ = this.http.get();
+  }
 }

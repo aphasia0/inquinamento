@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {from, Observable} from 'rxjs';
+import {ScullyRoute, ScullyRoutesService} from '@scullyio/ng-lib';
+import {concatMap, filter, map, switchMap, take, tap, toArray} from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  links$: Observable<ScullyRoute[]>;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(private scully: ScullyRoutesService) {
+    this.links$ = this.scully.available$.pipe(
+      map(value => value.filter(
+        value1 => value1.title))
+    );
   }
 
+  ngOnInit() {
+    console.log('ciao');
+    // debug current pages
+    this.links$.subscribe((links) => {
+      console.log('Pippo', links);
+    });
+  }
 }
+
