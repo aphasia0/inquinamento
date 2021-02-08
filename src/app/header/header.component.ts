@@ -15,16 +15,13 @@ export class HeaderComponent implements OnInit {
   constructor(private scully: ScullyRoutesService) {
     this.links$ = this.scully.available$.pipe(
       map(value => value.filter(
-        value1 => value1.title))
+        value1 => value1.title)),
+      tap(console.log)
     );
   }
 
   ngOnInit() {
-    console.log('ciao');
-    // debug current pages
-    this.links$.subscribe((links) => {
-      console.log('Pippo', links);
-    });
+
   }
 }
 
