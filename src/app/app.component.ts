@@ -1,6 +1,4 @@
-import { InquinamentoService } from './inquinamento.service';
-import { Component } from '@angular/core';
-import {Observable} from 'rxjs';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +7,8 @@ import {Observable} from 'rxjs';
 })
 export class AppComponent {
   title = 'test';
-  result$ :any;
 
-  constructor(private http: InquinamentoService) {
+  constructor() {
 
   }
 
@@ -27,7 +24,4 @@ rowData = [
     { make: 'Porsche', model: 'Boxter', price: 72000 }
 ];
 
-  alert(cioao: string) {
-    this.result$ = this.http.get();
-  }
 }
