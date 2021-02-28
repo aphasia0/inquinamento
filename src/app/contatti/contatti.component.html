@@ -1,23 +1,32 @@
-<form [formGroup]="profileForm" name="contact" method="POST" data-netlify="true">
-  <p>
+<p-messages [(value)]="msgs" ></p-messages>
+<form [formGroup]="profileForm" name="contact">
+  <div class="p-fluid">
 
-  <div class="p-field p-col-12 p-md-4">
-    <label>Your Name: <input formControlName="firstName" type="text" name="name"/></label>
-  </div>
+    <div class="p-field p-grid">
+      <label for="name" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Nome</label>
+      <div class="p-col-12 p-md-10">
+        <input id="name" formControlName="name" type="text" pInputText>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="phone" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Telefono</label>
+      <div class="p-col-12 p-md-10">
+        <input id='phone' formControlName="phone" type="number" pInputText>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="message" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Messaggio</label>
+      <div class="p-col-12 p-md-10">
+        <textarea formControlName="message" id="message" rows="5" cols="30" pInputTextarea></textarea>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="message" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"></label>
+      <div class="p-col-12 p-md-10">
+        <button pButton type="button" [disabled]="profileForm.invalid" label="Submit" (click)="send()"></button>
+      </div>
+    </div>
 
-  <div class="p-field p-col-12 p-md-4">
-    <label>Your Email: <input formControlName="lastName" type="email" name="email"/></label>
+
   </div>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button [disabled]="!profileForm.valid" type="submit">Send</button>
-  </p>
 </form>

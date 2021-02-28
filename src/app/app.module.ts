@@ -13,7 +13,10 @@ import {ScullyLibModule} from '@scullyio/ng-lib';
 import {ButtonModule} from 'primeng/button';
 import {ContattiComponent} from './contatti/contatti.component';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import {InputTextModule} from 'primeng/inputtext';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,13 +26,17 @@ import {ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     AgGridModule.withComponents([]),
     ScullyLibModule,
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputTextModule,
+    MessageModule,
+    MessagesModule
   ],
   providers: [InquinamentoService],
   bootstrap: [AppComponent]
