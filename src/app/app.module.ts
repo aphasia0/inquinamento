@@ -17,6 +17,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {GalleriaModule} from 'primeng/galleria';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ContattiComponent
   ],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -35,7 +38,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ButtonModule,
     ReactiveFormsModule,
     InputTextModule,
-    MessageModule,
+    MessageModule, GalleriaModule,
     MessagesModule
   ],
   providers: [InquinamentoService],

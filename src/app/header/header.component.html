@@ -1,4 +1,4 @@
-<!--Navbar-->
+ <!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-light grey lighten-3">
 
   <!-- Navbar brand -->
@@ -13,12 +13,17 @@
       <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['home']">Home</a>
       </li>
-      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of links$ | async">
-        <a class="nav-link waves-light" mdbWavesEffect [routerLink]=[page.route]>{{ page.title }}</a>
-      </li>
-
       <li [routerLinkActive]="['active']" class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/contatti']">Contatti</a>
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['blog','about-us']">Chi Siamo</a>
+      </li>
+      <li [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['blog','casa']">Casa</a>
+      </li>
+      <li [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['blog','centrotavola']">Centrotavola</a>
+      </li>
+      <li [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['contatti']">Contatti</a>
       </li>
 
     </ul>
